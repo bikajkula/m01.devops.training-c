@@ -5,7 +5,7 @@ agent:
     type: f1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: Build!1
+  - name: Build!
     task:
       jobs:
         - name: Make app
@@ -21,6 +21,7 @@ blocks:
       jobs:
         - name: Run app
           commands:
+            - checkout
             - chmod +x app
             - ./app
         - name: Lint
